@@ -1,0 +1,108 @@
+@import '../../../styles.scss';
+
+.container-fluid{
+    position: absolute;
+    z-index: 1;
+}
+
+.menu{
+    min-width: 100%;
+    padding: 0 35px;
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.644),rgba(255,255,255,0));
+
+    .items{
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+        display: flex;
+        align-items: center;
+
+        .menu__item{
+            padding: 0 15px;
+
+            .menu__link{
+                position: relative;
+                text-decoration: none;
+                text-transform: uppercase;
+                font-family: 'Poppins', sans-serif;
+                font-size: 20px;
+                font-weight: 400;
+                color: $color-white;
+
+                &:hover{
+                    color: $color-primary;
+                    font-weight: 600;
+                }
+
+                &::before{
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border-top: 1px solid $color-primary;
+                    border-bottom: 1px solid $color-primary;
+                    transform: scaleY(2);
+                    opacity: 0;
+                    transition: all .5s;
+                }
+                &:hover::before{
+                    transform: scaleY(1);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    .menu__logo{
+        margin: 15px;
+
+        .menu__link--logo img{
+            width: 100px;
+            transition: all .5s;
+        }
+    }
+}
+
+//----------------
+
+.scrollMenu{
+    position: fixed;
+    background: none;
+    background-color: $color-primary;
+
+    .items{
+
+        .menu__item{
+
+            .menu__link{
+                color: $color-metal;
+
+                &:hover{
+                    color: $color-metal;
+                    font-weight: 600;
+                }
+
+                &::before{
+                    content: '';
+                    border-top: 1px solid $color-metal;
+                    border-bottom: 1px solid $color-metal;
+                }
+                &:hover::before{
+                    transform: scaleY(1);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    .menu__logo{
+
+        .menu__link--logo img{
+                width: 70px;
+            }
+    }
+}
+
+
